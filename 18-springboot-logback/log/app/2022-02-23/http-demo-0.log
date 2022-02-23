@@ -1,0 +1,9 @@
+2022-02-23 17:03:37.481 [INFO ] com.who.springboot.Application - Starting Application using Java 1.8.0_202 on LAPTOP-TO5BI8IC with PID 18488 (E:\Myfile\javaIDEA\javaee\18-springboot-logback\target\classes started by HSensei in E:\Myfile\javaIDEA)
+2022-02-23 17:03:37.484 [DEBUG] com.who.springboot.Application - Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-23 17:03:37.484 [INFO ] com.who.springboot.Application - No active profile set, falling back to default profiles: default
+2022-02-23 17:03:39.441 [INFO ] com.who.springboot.Application - Started Application in 2.659 seconds (JVM running for 3.149)
+2022-02-23 17:03:46.271 [INFO ] com.who.springboot.controller.IndexController - ---index---
+2022-02-23 17:03:46.312 [INFO ] com.who.springboot.controller.IndexController - ---index---
+2022-02-23 17:03:46.463 [INFO ] com.who.springboot.controller.IndexController - ---index---
+2022-02-23 17:03:46.606 [INFO ] com.who.springboot.controller.IndexController - ---index---
+2022-02-23 17:03:46.755 [INFO ] com.who.springboot.controller.IndexController - ---index---
