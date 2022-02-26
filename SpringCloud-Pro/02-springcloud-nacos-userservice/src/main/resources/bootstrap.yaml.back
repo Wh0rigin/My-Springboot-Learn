@@ -1,0 +1,12 @@
+#热部署开机前处理
+#spring:
+#  application:
+#    name: user-service-a
+##  profiles:
+##    active: dev
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: localhost:80
+#      config:
+#        file-extension: yaml
