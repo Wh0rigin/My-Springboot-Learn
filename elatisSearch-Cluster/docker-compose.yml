@@ -1,0 +1,61 @@
+version: '3.7'
+services:
+  es01-cluster:
+    image: elasticsearch:8.0.0
+    container_name: es01-cluster
+    environment:
+      - node.name=es01-cluster
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es02-cluster,es03-cluster
+      - cluster.initial_master_nodes=es01-cluster,es02-cluster,es03-cluster
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+    ports:
+      - 9200:9200
+    networks:
+      - elastic-cluster
+  es02-cluster:
+    image: elasticsearch:8.0.0
+    container_name: es02-cluster
+    environment:
+      - node.name=es02-cluster
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es01-cluster,es03-cluster
+      - cluster.initial_master_nodes=es01-cluster,es02-cluster,es03-cluster
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+    ports:
+      - 9201:9200
+    networks:
+      - elastic-cluster
+  es03-cluster:
+    image: elasticsearch:8.0.0
+    container_name: es03-cluster
+    environment:
+      - node.name=es03-cluster
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es01-cluster,es02-cluster
+      - cluster.initial_master_nodes=es01-cluster,es02-cluster,es03-cluster
+      - xpack.security.enabled=false  # 账号密码登录暂时有点问题，暂时关闭
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+    ports:
+      - 9202:9200
+    networks:
+      - elastic-cluster
+  cerebro-cluster:
+    image: lmenezes/cerebro
+    container_name: cerebro-cluster
+    ports:
+      - 9000:9000
+    networks:
+      - elastic-cluster
+  kibana-cluster:
+    image: kibana:8.0.0
+    container_name: kibana-cluster
+    ports:
+      - 5601:5601
+    networks:
+      - elastic-cluster
+networks:
+  elastic-cluster:
+    driver: bridge

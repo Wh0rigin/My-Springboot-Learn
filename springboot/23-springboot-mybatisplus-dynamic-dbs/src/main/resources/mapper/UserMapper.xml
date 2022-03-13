@@ -1,0 +1,3 @@
+<mapper namespace="com.who.springboot.mapper.UserMapper">
+
+</mapper>
