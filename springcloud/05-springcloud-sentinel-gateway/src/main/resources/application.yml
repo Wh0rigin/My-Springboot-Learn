@@ -14,7 +14,7 @@ spring:
           predicates:
             - Path=/user/**
         - id: order-service
-          uri: lb://order-service-a
+          uri: lb://orderservice
           predicates:
             - Path=/order/**
             #在这里可附加路由断言工厂，指定断言限制

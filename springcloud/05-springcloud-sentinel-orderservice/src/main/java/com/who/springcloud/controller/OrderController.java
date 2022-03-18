@@ -19,4 +19,17 @@ public class OrderController {
         Order order = orderService.queryOrderById(id);
         return order;
     }
+
+
+    @GetMapping("query")
+    public Object query(){
+        System.err.println("查询订单");
+        return "查询订单";
+    }
+
+    @GetMapping("write")
+    public Object write(){
+        System.err.println("新增订单");
+        return "新增订单";
+    }
 }
